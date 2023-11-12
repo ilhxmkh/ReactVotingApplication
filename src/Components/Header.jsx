@@ -11,8 +11,32 @@ function Header() {
 const navigate = useNavigate() 
 
 
+const styles = {
+  nav: {
+    display: 'flex',
+  },
+  listItem: {
+    marginRight: '8px',
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'white',
+  },
+  button: {
+    display: 'inline-block',
+    padding: '8px 16px',
+    borderRadius: '20px',
+    transition: 'background-color 0.2s',
+  },
+  ul: {
+    listStyleType: 'none',
+    margin: 0,
+    padding: 0,
+    display : 'flex',
+  },
+}
 const navItems = [
-    {
+  {
       name: 'Home',
       slug: "/",
       active: true
@@ -41,23 +65,27 @@ const navItems = [
   return (
     <header className='py-3 shadow bg-gray-500'>
       <Container>
-        <nav className='flex'>
-          <div className='mr-4'>
-            <Link to='/'>
-              
-
+        <nav style={styles.nav}>
+          <div style={styles.listItem}>
+            <Link to="/" style={styles.link}>
+              Home
               </Link>
           </div>
-          <ul className='flex ml-auto'>
+          <ul className='flex ml-auto'style={styles.nav, styles.ul}>
             {navItems.map((item) => 
-            item.active ? (
-              <li key={item.name}>
+            item.active && (
+              <li key={item.name} style={styles.listItem}>
                 <button
                 onClick={() => navigate(item.slug)}
+                style={{
+                  ...styles.button,
+                  backgroundColor: item.active ? 'blue' : 'transparent',
+                }}
                 className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
-                >{item.name}</button>
+                >{item.name}
+                </button>
               </li>
-            ) : null
+            )
             )}
             {/* {authStatus && (
               <li>

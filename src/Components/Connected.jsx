@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Login from "./Login";
 import Header from "./Header";
 const Connected = (props) => {
-
+    
     
 
     
-
-
+    
+    
     return (
         <><Header/>
         <div className="connected-container">
