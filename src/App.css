@@ -1,34 +1,130 @@
-.login-container {
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url('back.gif');
+}
+
+.connected-info {
+  margin-top: 20px;
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  width: 100%; /* Take up the full width of the container */
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+@media only screen and (max-width: 600px) {
+  .connected-info {
+    /* Adjust styles for smaller screens if needed */
+  }
+}
+.background{
+  width: 100%;
+  height: 100%;
+}
+
+.login-container {
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f1f1f1;
+  border-radius: 10px;
+  background-color : transparent;
+  padding: 20px;
   margin-top: 20px;
 }
 
+.transbox {
+  margin: 30px;
+  border: 1px solid black;
+  opacity: 1;
+  background-color: transparent;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+/* Add this to your CSS file or component style tag */
+
 .welcome-message {
+  margin-top: 20px;
+  margin: 5%;
+  color: #edf6ff;
   font-size: 2rem;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  font-weight: bold;
   margin-bottom: 2rem;
 }
 
+.my-custom-button {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+.
+.my-custom-button:hover {
+  background-color: #4586a0; /* Darker green on hover */
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.my-custom-button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+.my-custom-button:active{
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+  text-decoration: none;
+}
+
 .login-button {
+  padding: 15px;
   background-color: #0c0f14;
   text-align: center;
   color: #fff;
   font-size: 1.2rem;
   border: none;
-  border-radius: 0.3rem;
-  padding: 1rem 2rem;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
+  
 }
-
 .login-button:hover {
   background-color: #0069d9;
+}
+
+#st {
+  background-color:#a72690;
+  transition: background-color 0.3s ease;
+  align-content: center;
+}
+
+#st:hover{
+  background-color: #0c0f14;
 }
 
 
@@ -37,20 +133,77 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* min-height: 100vh; */
+  padding: 20px;
   background-color: #f1f1f1;
+  background: url("back.gif") no-repeat center center fixed;
+  background-size: cover;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700');
+
+
 .connected-header {
-  font-size: 2rem;
+    -webkit-animation: squiggly-anim 0.34s linear infinite;
+    animation: squiggly-anim 0.34s linear infinite;
+    font-family: 'Amatic SC', sans-serif;
+    text-decoration: none;
+}
+.connected-header {
+  display :inline-block;
+  vertical-align :middle;
+  width :100%;
+  outline: none;
   text-align: center;
-  margin-bottom: 2rem;
+  line-height: 1;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: -50px;
+  color: white;
+}
+@-webkit-keyframes squiggly-anim {
+  0% {
+    filter: url("#squiggly-0");
+  }
+  25% {
+    filter: url("#squiggly-1");
+  }
+  50% {
+    filter: url("#squiggly-2");
+  }
+  75% {
+    filter: url("#squiggly-3");
+  }
+  100% {
+    filter: url("#squiggly-4");
+  }
+}
+@keyframes squiggly-anim {
+  0% {
+    filter: url("#squiggly-0");
+  }
+  25% {
+    filter: url("#squiggly-1");
+  }
+  50% {
+    filter: url("#squiggly-2");
+  }
+  75% {
+    filter: url("#squiggly-3");
+  }
+  100% {
+    filter: url("#squiggly-4");
+  }
 }
 
 .connected-account {
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 2rem;
+  padding: 10px;
+  background-color: #f0f0f0; /* Highlight color */
+  border-radius: 10px; /* Rounded corners */
+  display: inline-block;
 }
 
 .connected-button {
@@ -74,11 +227,11 @@
   text-align: center;
 }
 
-
 .candidates-table {
   border-collapse: collapse;
-  width: 50%;
+  width: 100%;
   text-align:center;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .candidates-table th, .candidates-table td {

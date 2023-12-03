@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Login from "./Login";
 import Header from "./Header";
+import backg from "./back.gif";
 
 const AdminPage = (props) => {
     const [name,setName]= useState("")
@@ -14,7 +15,6 @@ const AdminPage = (props) => {
         props.addCandidate(name)
     }
    
-
     return (
         <><Header/>
         <div className="login-container">
