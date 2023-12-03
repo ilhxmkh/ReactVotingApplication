@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 import Login from "./Login";
+import Register from "./Register";
 
 const LandingPage = (props) => {
   return (
@@ -36,7 +37,8 @@ const LandingPage = (props) => {
       
             
           </>
-        ) : null}
+        ) :null}
+        
       </div>
     </div>
   );

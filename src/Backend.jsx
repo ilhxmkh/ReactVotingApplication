@@ -13,6 +13,7 @@ import AdminPage from './Components/AdminPage';
 // import { useDispatch,useSelector} from 'react-redux'
 import {connectMeta} from './Store/authSlice'
 import { Outlet } from 'react-router-dom';
+import Register from './Components/Register';
 
 function Backend(props) {
   const [provider, setProvider] = useState(null);
@@ -229,11 +230,15 @@ function Backend(props) {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element ={<App/>}>
-        <Route path='' element={<LandingPage connectWallet = {connectToMetamask}
-                                                isConnected = {isConnected}/>}/>
+        <Route path='login' element={<Register connectWallet = {connectToMetamask}
+                                                isConnected = {isConnected}
+                                               />}/>
         <Route path='result' element={<Result votingStatus = {votingStatus}
                                                 winnerName={winnerName}
                                                 winnerVote = {winnerVote}/>}/>
+        <Route path='' element={<LandingPage connectWallet = {connectToMetamask}
+                                                isConnected = {isConnected}
+                                               />}/>
         <Route path='vote' element={<Connected  account = {account}
                         candidates = {candidates}
                         isConnected ={isConnected}
