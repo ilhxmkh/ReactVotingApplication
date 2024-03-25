@@ -33,6 +33,16 @@ const LandingPage = (props) => {
                 </Link>
               </button>
             </div>
+            <div>
+              <button
+                type="button"
+                className="my-custom-button" style={{ margin: '10px'}}
+              >
+                <Link to="createElection" className=" linki">
+                  Create
+                </Link>
+              </button>
+            </div>
             </div>
       
             

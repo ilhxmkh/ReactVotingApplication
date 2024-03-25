@@ -7,12 +7,18 @@ import backg from "./back.gif";
 const AdminPage = (props) => {
     const [name,setName]= useState("")
 
+
     async function handleAddCandidate(e) {
         setName(e.target.value);
       }
 
     const addC = ()=>{
         props.addCandidate(name)
+    }
+    const showBalance = ()=>{
+       props.showStatus()
+
+       alert(props.contract_Balance)
     }
    
     return (
@@ -23,6 +29,8 @@ const AdminPage = (props) => {
             {props.isOwner?<>
             <input type="text" placeholder="Entern Candidate Name" value={name} onChange={handleAddCandidate}></input>
             <button className="login-button" onClick={addC}>Add</button>
+            <button className="login-button" onClick={showBalance}>Show Balance</button>
+            
 
             <table id="myTable" className="candidates-table">
                 <thead>

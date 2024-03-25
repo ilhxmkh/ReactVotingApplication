@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Login from "./Login";
 import Header from "./Header";
 
 const Connected = (props) => {
+    // const [tokenStatus, setTokenStatus] = useState()
+    // function tokenStatusHandler(){
+       
+    //     setTokenStatus(props.tokenStatus)
+    //     }
     return (
         <>
             {props.isConnected && <Header />}
@@ -46,10 +51,38 @@ const Connected = (props) => {
                             <p className="connected-account">
                                 Metamask Account: {props.account}
                             </p>
+                            <button
+                                            className="login-button"
+                                            onClick={props.getToken}
+                                            
+                                        >
+                                            Get Token
+                                        </button>
                             <p className="connected-account">
                                 Remaining Time: {props.remainingTime}
                             </p>
-                            {props.showButton ? (
+                            <div>
+                                {(()=>{
+                                    if(props.showButton){return(<p className="connected-account">You have already voted</p>)}
+                                    else if (!props.tokenStatus){return(<p className="connected-account">No Voting Token</p>)}
+                                    else{return( <div>
+                                        <input
+                                            type="number"
+                                            placeholder="Enter Candidate Index"
+                                            value={props.number}
+                                            onChange={props.handleNumberChange}
+                                        />
+                                        <br />
+                                        <button
+                                            className="login-button"
+                                            onClick={props.voteFunction}
+                                        >
+                                            Vote
+                                        </button>
+                                       
+                                    </div>)}
+                                })()}</div>
+                            {/* {props.showButton ? (
                                 <p className="connected-account">You have already voted</p>
                             ) : (
                                 <div>
@@ -66,8 +99,16 @@ const Connected = (props) => {
                                     >
                                         Vote
                                     </button>
+                                    <button
+                                        className="login-button"
+                                        onClick={props.getToken}
+                                        
+                                    >
+                                        Get Token
+                                    </button>
                                 </div>
-                            )}
+                            )} */}
+                            
 
                             <div className="candidates-table-container">
                                 <table id="myTable" className="candidates-table">
