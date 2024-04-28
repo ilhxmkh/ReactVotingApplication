@@ -1,57 +1,54 @@
-import React from "react";
-import { Link ,NavLink} from "react-router-dom";
-import Login from "./Login";
-import Register from "./Register";
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Login from './Login';
+import Register from './Register';
+import landingImage from './../assets/hero-image.png';
 
 const LandingPage = (props) => {
-  return (
-    <div className="login-container" style={{ textAlign: 'center' }}>
-      <div>
-        <Login connectWallet={props.connectWallet} isConnected={props.isConnected} />
-        {props.isConnected ? (
-          <>
-      
-            {/* Add space between the buttons */}
-            <div style={{display:'flex' ,flexDirection:'row', justifyContent:'center'}}>
-            <div>
-              <button
-                type="button"
-                className="my-custom-button" style={{ margin: '10px'}}
-              >
-                <Link to="vote" className="linki">
-                  VOTE
-                </Link>
-              </button>
-            </div>
-            <div>
-              <button
-                type="button"
-                className="my-custom-button" style={{ margin: '10px'}}
-              >
-                <Link to="adminPage" className=" linki">
-                  ADMIN
-                </Link>
-              </button>
-            </div>
-            <div>
-              <button
-                type="button"
-                className="my-custom-button" style={{ margin: '10px'}}
-              >
-                <Link to="createElection" className=" linki">
-                  Create
-                </Link>
-              </button>
-            </div>
-            </div>
-      
-            
-          </>
-        ) :null}
-        
-      </div>
-    </div>
-  );
+	return (
+		<div className='px-2 py-6 space-y-4 text-slate-50 h-svh relative flex flex-col justify-between'>
+			<div className='flex w-full justify-between px-4'>
+				<div className='flex items-center gap-2'>
+					<img
+						src='Logo.svg'
+						alt='CryptoCast'
+					/>
+					<h1 className='font-black text-lg '>CryptoCast</h1>
+				</div>
+				<div>
+					{props.isConnected ? (
+						<button className='px-3 py-1 border-slate-50 border-2 rounded-md text-slate-50 button-shadow  bg-slate-'>
+							<Link to='adminPage'>Admin</Link>
+						</button>
+					) : null}
+				</div>
+			</div>
+			<div className='text-center'>
+				<h3 className='-mb-0.5'>Welcome to</h3>
+				<h2 className='text-4xl font-semibold -mt-1'>CryptoCast</h2>
+			</div>
+			<img
+				src={landingImage}
+				alt='blockchain illustration'
+			/>
+			<div className='-space-y-2.5'>
+				<Login
+					connectWallet={props.connectWallet}
+					isConnected={props.isConnected}
+				/>
+				{props.isConnected ? (
+					<button className='px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700'>
+						<Link
+							to='vote'
+							className='bg-transparent'
+						>
+							Vote
+						</Link>
+					</button>
+				) : null}
+			</div>
+		</div>
+	);
 };
 
 export default LandingPage;
