@@ -6,8 +6,8 @@ import landingImage from './../assets/hero-image.png';
 
 const LandingPage = (props) => {
 	return (
-		<div className='px-2 py-6 pb-8 space-y-4 text-slate-50 h-svh relative flex flex-col justify-between'>
-			<div className='flex w-full justify-between px-4'>
+		<div className='px-2 py-6 pb-8 space-y-4 text-slate-50 h-svh relative flex flex-col justify-between md:max-w-7xl md:mx-auto md:py-12'>
+			<div className='flex w-full justify-between px-4 md:max-w-5xl mx-auto'>
 				<div className='flex items-center gap-2'>
 					<img
 						src='Logo.svg'
@@ -30,6 +30,7 @@ const LandingPage = (props) => {
 			<img
 				src={landingImage}
 				alt='blockchain illustration'
+				className='md:max-h-[60svh] md:object-contain'
 			/>
 			<div className='-space-y-2.5'>
 				<Login
