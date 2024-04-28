@@ -4,7 +4,7 @@ import {contractAbi, contractAddress} from './Constant/constant';
 import Login from './Components/Login';
 import Result from './Components/Result';
 import Connected from './Components/Connected';
-import './App.css';
+// import './App.css';
 import LandingPage from './Components/LandingPage';
 import { useNavigate } from 'react-router-dom';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'

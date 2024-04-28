@@ -1,20 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
-    return (
-        <div className="login-container">
-            
-        <div className="transbox">
-            <div className="welcome-message">Welcome to decentralized voting application</div> 
-          { props.isConnected? 
-            <button className="login-button" id="st" onClick = {props.connectWallet}>Metamask Is Connected
-            </button>: 
-            <button className="login-button" onClick = {props.connectWallet}>Login Metamask
-            </button>}
-        </div>
-        </div>
-    )
-}
+	return (
+		<>
+			<button
+				className='px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-semibold block mx-auto'
+				id='st'
+				onClick={props.connectWallet}
+			>
+				{props.isConnected ? 'Metamask Connected' : 'Login Metamask'}
+			</button>
+			<button
+				className='login-button'
+				onClick={props.connectWallet}
+			></button>
+		</>
+	);
+};
 
 export default Login;
