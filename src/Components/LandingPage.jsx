@@ -6,7 +6,7 @@ import landingImage from './../assets/hero-image.png';
 
 const LandingPage = (props) => {
 	return (
-		<div className='px-2 py-6 space-y-4 text-slate-50 h-svh relative flex flex-col justify-between'>
+		<div className='px-2 py-6 pb-8 space-y-4 text-slate-50 h-svh relative flex flex-col justify-between'>
 			<div className='flex w-full justify-between px-4'>
 				<div className='flex items-center gap-2'>
 					<img
