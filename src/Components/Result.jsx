@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from './Header';
+import HeaderLogo from './HeaderLogo';
 
 const Result = (props) => {
 	const [showResult, setShowResult] = useState(false);
@@ -7,7 +8,8 @@ const Result = (props) => {
 		setShowResult(true);
 	}
 	return (
-		<div className='mt-8'>
+		<div className='px-2'>
+			<HeaderLogo />
 			<Header />
 			<div className='text-lg text-center space-y-6'>
 				<button
