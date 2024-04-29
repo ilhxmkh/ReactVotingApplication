@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import Login from './Login';
 import Header from './Header';
+import HeaderLogo from './HeaderLogo';
 
 const AdminPage = (props) => {
 	const [name, setName] = useState('');
@@ -20,7 +21,8 @@ const AdminPage = (props) => {
 	};
 
 	return (
-		<div className='pt-8 px-4 h-svh'>
+		<div className='px-2 h-svh'>
+			<HeaderLogo />
 			<Header />
 			<div className='login-container'>
 				<Login
@@ -37,7 +39,7 @@ const AdminPage = (props) => {
 								onChange={handleAddCandidate}
 								className='border-b-2 w-full text-center font-medium mb-2'
 							/>
-							<div className='flex'>
+							<div className='flex gap-4 justify-center'>
 								<div className='flex gap-2 justify-end'>
 									<button
 										className='px-4 py-1 border-slate-50 border-2 rounded-md text-slate-50 button-shadow text-lg font-bold block mx-auto bg-blue-700'
@@ -47,7 +49,7 @@ const AdminPage = (props) => {
 									</button>
 								</div>
 								<button
-									className='px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-800'
+									className='px-4 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow text-lg font-bold bg-blue-800'
 									onClick={showBalance}
 								>
 									Show Balance
