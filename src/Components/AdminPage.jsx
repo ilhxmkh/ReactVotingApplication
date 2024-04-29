@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import Login from './Login';
 import Header from './Header';
-import backg from './back.gif';
 
 const AdminPage = (props) => {
 	const [name, setName] = useState('');
@@ -21,7 +20,7 @@ const AdminPage = (props) => {
 	};
 
 	return (
-		<div className='pt-8'>
+		<div className='pt-8 px-4 h-svh'>
 			<Header />
 			<div className='login-container'>
 				<Login
@@ -29,35 +28,41 @@ const AdminPage = (props) => {
 					isConnected={props.isConnected}
 				/>
 				{props.isOwner ? (
-					<>
-						<input
-							type='text'
-							placeholder='Enter Candidate Name'
-							value={name}
-							onChange={handleAddCandidate}
-						></input>
-						<button
-							className='login-button'
-							onClick={addC}
-						>
-							Add
-						</button>
-						<button
-							className='login-button'
-							onClick={showBalance}
-						>
-							Show Balance
-						</button>
-
+					<div className='space-y-4 mt-2 text-lg px-3'>
+						<div className='space-y-4 '>
+							<input
+								type='text'
+								placeholder='Enter Candidate Name'
+								value={name}
+								onChange={handleAddCandidate}
+								className='border-b-2 w-full text-center font-medium mb-2'
+							/>
+							<div className='flex'>
+								<div className='flex gap-2 justify-end'>
+									<button
+										className='px-4 py-1 border-slate-50 border-2 rounded-md text-slate-50 button-shadow text-lg font-bold block mx-auto bg-blue-700'
+										onClick={addC}
+									>
+										Add +
+									</button>
+								</div>
+								<button
+									className='px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-800'
+									onClick={showBalance}
+								>
+									Show Balance
+								</button>
+							</div>
+						</div>
 						<table
 							id='myTable'
-							className='candidates-table'
+							className='text-lg w-full'
 						>
 							<thead>
-								<tr>
-									<th>Index</th>
-									<th>Candidate name</th>
-									<th>Candidate votes</th>
+								<tr className='flex justify-between w-full'>
+									<th className='border-b-2'>Index</th>
+									<th className='border-b-2'>Candidate name</th>
+									<th className='border-b-2'>Candidate votes</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -70,7 +75,7 @@ const AdminPage = (props) => {
 								))}
 							</tbody>
 						</table>
-					</>
+					</div>
 				) : (
 					<h1 className='text-3xl font-semibold text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
 						You are not the Owner
