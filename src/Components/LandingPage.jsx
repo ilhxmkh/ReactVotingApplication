@@ -12,41 +12,44 @@ const LandingPage = (props) => {
 					<img
 						src='Logo.svg'
 						alt='CryptoCast'
+						className='md:w-12'
 					/>
 					<h1 className='font-black text-lg '>CryptoCast</h1>
 				</div>
 				<div>
 					{props.isConnected ? (
-						<button className='px-3 py-1 border-slate-50 border-2 rounded-md text-slate-50 button-shadow'>
+						<button className='px-3 py-1 border-slate-50 border-2 rounded-md text-slate-50 button-shadow md:text-xl'>
 							<Link to='adminPage'>Admin</Link>
 						</button>
 					) : null}
 				</div>
 			</div>
 			<div className='text-center'>
-				<h3 className='-mb-0.5'>Welcome to</h3>
-				<h2 className='text-4xl font-semibold -mt-1'>CryptoCast</h2>
+				<h3 className='-mb-0.5 md:text-xl'>Welcome to</h3>
+				<h2 className='text-4xl font-semibold -mt-1 md:text-5xl'>CryptoCast</h2>
 			</div>
-			<img
-				src={landingImage}
-				alt='blockchain illustration'
-				className='md:max-h-[60svh] md:object-contain'
-			/>
-			<div className='-space-y-2.5'>
-				<Login
-					connectWallet={props.connectWallet}
-					isConnected={props.isConnected}
+			<div className='md:flex md:mx-auto items-center justify-center gap-12 md:w-3/4'>
+				<img
+					src={landingImage}
+					alt='blockchain illustration'
+					className='md:max-h-[60svh] md:object-contain'
 				/>
-				{props.isConnected ? (
-					<button className='px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700'>
-						<Link
-							to='vote'
-							className='bg-transparent'
-						>
-							Vote
-						</Link>
-					</button>
-				) : null}
+				<div className='-space-y-2.5 md:pb-8'>
+					<Login
+						connectWallet={props.connectWallet}
+						isConnected={props.isConnected}
+					/>
+					{props.isConnected ? (
+						<button className='px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700'>
+							<Link
+								to='vote'
+								className='bg-transparent'
+							>
+								Vote
+							</Link>
+						</button>
+					) : null}
+				</div>
 			</div>
 		</div>
 	);

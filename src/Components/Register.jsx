@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { account, ID } from '../lib/appwrite';
 import HeaderLogo from './HeaderLogo';
 
+// PAGE ROUTE IS /LOGIN
+
 const Register = (props) => {
 	const [phone, setPhone] = useState('');
 	const [otp, setOtp] = useState('');
@@ -58,7 +60,7 @@ const Register = (props) => {
 		// createService();
 
 		if (!phone) {
-			setEmailError('Email is Required!');
+			setEmailError('Phone Number is Required!');
 			return;
 		}
 
@@ -74,17 +76,17 @@ const Register = (props) => {
 	};
 
 	return (
-		<div className='px-2 space-y-4'>
+		<div className='px-2 space-y-4 pt-2'>
 			<HeaderLogo />
 			<div className='text-center pt-16'>
-				<h3 className='-mb-0.5'>Welcome to</h3>
-				<h2 className='text-4xl font-semibold -mt-1'>CryptoCast</h2>
+				<h3 className='-mb-0.5 md:text-xl'>Welcome to</h3>
+				<h2 className='text-4xl font-semibold -mt-1 md:text-5xl'>CryptoCast</h2>
 			</div>
-			<div className='px-3 space-y-4 text-lg'>
+			<div className='px-3 space-y-4 text-lg '>
 				{isLoggedIn ? (
 					<form
 						onSubmit={handleSubmit}
-						className='px-6 top-1/2 absolute -translate-y-1/2 left-1/2 -translate-x-1/2 w-full'
+						className='px-6 top-1/2 absolute -translate-y-1/2 left-1/2 -translate-x-1/2 w-full md:w-1/4 md:mt-8'
 					>
 						<div className='flex gap-3 justify-between space-y-4'>
 							<input
@@ -95,7 +97,7 @@ const Register = (props) => {
 								className='border-b-2 pl-1 font-bold mt-4'
 							/>
 							{emailError && (
-								<p className='absolute top-80 left-1/2 -translate-x-1/2 text-xl text-blue-200 font-medium'>
+								<p className='absolute top-80 left-1/2 -translate-x-1/2 text-xl text-blue-200 font-medium w-full text-center'>
 									{emailError}
 								</p>
 							)}
