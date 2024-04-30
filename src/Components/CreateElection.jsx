@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Login from './Login';
 import Header from './Header';
 import backg from './back.gif';
+import HeaderLogo from './HeaderLogo';
 
 const CreateElection = (props) => {
 	const [name, setName] = useState('');
@@ -24,33 +25,37 @@ const CreateElection = (props) => {
 	};
 
 	return (
-		<>
+		<div>
+			<HeaderLogo />
 			<Header />
-			<div className='login-container'>
+			<div className=' md:max-w-6xl md:mx-auto'>
 				<Login
 					connectWallet={props.connectWallet}
 					isConnected={props.isConnected}
 				/>
 				{props.isOwner ? (
-					<>
+					<div className='space-y-4 mt-2 text-lg px-3 md:space-y-12'>
 						<input
 							type='text'
-							placeholder='Entern Candidate Name'
+							placeholder='Enter Candidate Name'
 							value={name}
 							onChange={handleAddCandidate}
-						></input>
+							className='border-b-2 w-2/3 mx-auto block text-center font-bold mb-2 md:max-w-xl md:mx-auto md:block md:my-4 md:mb-8'
+						/>
 						<button
-							className='login-button'
 							onClick={handlecreateElection}
+							className='px-4 py-1 border-slate-50 border-2 rounded-md text-slate-50 button-shadow text-lg font-bold block mx-auto bg-blue-700'
 						>
 							Create
 						</button>
-					</>
+					</div>
 				) : (
-					<h1>You are not the Owner</h1>
+					<h1 className='text-3xl font-semibold text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
+						You are not the Owner
+					</h1>
 				)}
 			</div>
-		</>
+		</div>
 	);
 };
 
