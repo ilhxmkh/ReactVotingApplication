@@ -72,7 +72,7 @@ const Connected = (props) => {
 									id='myTable'
 									className='text-lg w-full'
 								>
-									<thead>
+									<thead className=''>
 										<tr className='flex justify-between w-full text-center'>
 											<th className='border-b-2 md:text-2xl'>Index</th>
 											<th className='border-b-2 md:text-2xl'>Candidate name</th>
@@ -81,7 +81,7 @@ const Connected = (props) => {
 											</th>
 										</tr>
 									</thead>
-									<tbody className='flex justify-between w-full'>
+									<tbody className='w-full'>
 										{props.candidates?.map((candidate, index) => (
 											<tr
 												key={index}
@@ -92,7 +92,12 @@ const Connected = (props) => {
 												<td className='md:text-xl'>{candidate.voteCount}</td>
 											</tr>
 										))}
-										{/* <tr className='flex justify-between w-full mt-2'>
+										{/* <tr className='flex justify-between w-full mt-1.5'>
+											<td className='md:text-xl'>01</td>
+											<td className='md:text-xl'>Danish Asad</td>
+											<td className='md:text-xl'>69420</td>
+										</tr>
+										<tr className='flex justify-between w-full mt-2'>
 											<td className='md:text-xl'>01</td>
 											<td className='md:text-xl'>Danish Asad</td>
 											<td className='md:text-xl'>69420</td>

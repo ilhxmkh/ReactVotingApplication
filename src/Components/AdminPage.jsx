@@ -68,7 +68,7 @@ const AdminPage = (props) => {
 										<th className='border-b-2 md:text-2xl'>Candidate votes</th>
 									</tr>
 								</thead>
-								<tbody className='flex justify-between w-full'>
+								<tbody className='w-full'>
 									{props.candidates?.map((candidate, index) => (
 										<tr
 											key={index}
@@ -84,10 +84,15 @@ const AdminPage = (props) => {
 										</tr>
 									))}
 									{/* <tr className='flex justify-between w-full mt-2'>
-											<td className='md:text-xl font-bold'>01</td>
-											<td className='md:text-xl font-bold'>Danish Asad</td>
-											<td className='md:text-xl font-bold'>69420</td>
-										</tr> */}
+										<td className='md:text-xl font-bold'>01</td>
+										<td className='md:text-xl font-bold'>Danish Asad</td>
+										<td className='md:text-xl font-bold'>69420</td>
+									</tr>
+									<tr className='flex justify-between w-full mt-2'>
+										<td className='md:text-xl font-bold'>01</td>
+										<td className='md:text-xl font-bold'>Danish Asad</td>
+										<td className='md:text-xl font-bold'>69420</td>
+									</tr> */}
 								</tbody>
 							</table>
 						</div>
