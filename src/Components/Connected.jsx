@@ -9,7 +9,7 @@ const Connected = (props) => {
 	//     setTokenStatus(props.tokenStatus)
 	//     }
 	return (
-		<div className='pt-8 px-4 h-svh'>
+		<div className='pt-8 px-4 h-svh overflow-clip'>
 			{props.isConnected && <Header />}
 			<Login
 				connectWallet={props.connectWallet}
@@ -35,7 +35,7 @@ const Connected = (props) => {
 								{(() => {
 									if (props.showButton) {
 										return (
-											<p className='px-2 py-4 capitalize bg-green-800 rounded-md mb-8'>
+											<p className='px-2 py-4 capitalize bg-green-800 rounded-md mb-8 block md:w-max md:mx-auto md:px-6'>
 												You have already voted
 											</p>
 										);
@@ -67,26 +67,36 @@ const Connected = (props) => {
 								})()}
 							</div>
 
-							<div className='candidates-table-container'>
+							<div className='max-w-5xl mx-auto md:mt-16'>
 								<table
 									id='myTable'
 									className='text-lg w-full'
 								>
 									<thead>
-										<tr className='flex justify-between w-full'>
-											<th className='border-b-2'>Index</th>
-											<th className='border-b-2'>Candidate name</th>
-											<th className='border-b-2'>Candidate votes</th>
+										<tr className='flex justify-between w-full text-center'>
+											<th className='border-b-2 md:text-2xl'>Index</th>
+											<th className='border-b-2 md:text-2xl'>Candidate name</th>
+											<th className='border-b-2 md:text-2xl'>
+												Candidate votes
+											</th>
 										</tr>
 									</thead>
-									<tbody>
+									<tbody className='flex justify-between w-full'>
 										{props.candidates?.map((candidate, index) => (
-											<tr key={index}>
-												<td>{candidate.index}</td>
-												<td>{candidate.name}</td>
-												<td>{candidate.voteCount}</td>
+											<tr
+												key={index}
+												className='flex justify-between w-full mt-2'
+											>
+												<td className='md:text-xl'>{candidate.index}</td>
+												<td className='md:text-xl'>{candidate.name}</td>
+												<td className='md:text-xl'>{candidate.voteCount}</td>
 											</tr>
 										))}
+										{/* <tr className='flex justify-between w-full mt-2'>
+											<td className='md:text-xl'>01</td>
+											<td className='md:text-xl'>Danish Asad</td>
+											<td className='md:text-xl'>69420</td>
+										</tr> */}
 									</tbody>
 								</table>
 							</div>
