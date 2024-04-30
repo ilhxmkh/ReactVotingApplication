@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Login from './Login';
 import Header from './Header';
 import HeaderLogo from './HeaderLogo';
+import { Link } from 'react-router-dom';
 
 const AdminPage = (props) => {
 	const [name, setName] = useState('');
@@ -22,7 +23,14 @@ const AdminPage = (props) => {
 
 	return (
 		<div className='px-2 h-svh'>
-			<HeaderLogo />
+			<div className='flex justify-between items-center pr-4 md:max-w-6xl md:mx-auto'>
+				<HeaderLogo />
+				{props.isOwner ? (
+					<button className='px-3 py-1 border-slate-50 border-2 rounded-md text-slate-50 button-shadow font-semibold '>
+						<Link to='/createElection'>Create</Link>
+					</button>
+				) : null}
+			</div>
 			<Header />
 			<div className='login-container'>
 				<Login
@@ -68,7 +76,7 @@ const AdminPage = (props) => {
 										<th className='border-b-2 md:text-2xl'>Candidate votes</th>
 									</tr>
 								</thead>
-								<tbody className='flex justify-between w-full'>
+								<tbody className='w-full'>
 									{props.candidates?.map((candidate, index) => (
 										<tr
 											key={index}
@@ -84,10 +92,15 @@ const AdminPage = (props) => {
 										</tr>
 									))}
 									{/* <tr className='flex justify-between w-full mt-2'>
-											<td className='md:text-xl font-bold'>01</td>
-											<td className='md:text-xl font-bold'>Danish Asad</td>
-											<td className='md:text-xl font-bold'>69420</td>
-										</tr> */}
+										<td className='md:text-xl font-bold'>01</td>
+										<td className='md:text-xl font-bold'>Danish Asad</td>
+										<td className='md:text-xl font-bold'>69420</td>
+									</tr>
+									<tr className='flex justify-between w-full mt-2'>
+										<td className='md:text-xl font-bold'>01</td>
+										<td className='md:text-xl font-bold'>Danish Asad</td>
+										<td className='md:text-xl font-bold'>69420</td>
+									</tr> */}
 								</tbody>
 							</table>
 						</div>
