@@ -7,14 +7,16 @@ import HeaderLogo from './HeaderLogo';
 
 const CreateElection = (props) => {
 	const [name, setName] = useState('');
-	const [nameArray, setNameArray] = useState(['new', 'Election']);
+	const [nameArray, setNameArray] = useState(null);
 
 	async function handleAddCandidate(e) {
 		setName(e.target.value);
 	}
 	async function handlecreateElection(e) {
-		props.createElection(nameArray);
+		const candidatesArr = name.split(',').map((candidate) => candidate.strip());
+		props.createElection(candidatesArr);
 	}
+	
 	const addC = () => {
 		props.addCandidate(name);
 	};
