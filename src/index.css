@@ -27,10 +27,25 @@ code {
 @layer components {
 	.button-shadow {
 		box-shadow: 3px 3px 0px -1px #f5f5f5;
+		transition: 0.4s all;
 	}
 	.button-shadow-big {
 		box-shadow: 3px 3px 0px 0px #f5f5f5;
 		max-width: 250px;
 		width: 100%;
+		transition: 0.4s all
+	}
+	.button-shadow > *
+	{
+		background-color: inherit;
+	}
+
+	.button-shadow:hover,
+	.button-shadow-big:hover,
+	.button-shadow:focus,
+	.button-shadow-big:focus {
+		background-color: rgb(0, 0, 133);
+		translate: -1.5px -1.5px;
+		/* scale: 1.02; */
 	}
 }
