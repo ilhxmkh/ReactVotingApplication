@@ -13,10 +13,10 @@ const CreateElection = (props) => {
 		setName(e.target.value);
 	}
 	async function handlecreateElection(e) {
-		const candidatesArr = name.split(',').map((candidate) => candidate.strip());
+		const candidatesArr = name.split(',');
 		props.createElection(candidatesArr);
 	}
-	
+
 	const addC = () => {
 		props.addCandidate(name);
 	};
