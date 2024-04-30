@@ -30,14 +30,14 @@ const AdminPage = (props) => {
 					isConnected={props.isConnected}
 				/>
 				{props.isOwner ? (
-					<div className='space-y-4 mt-2 text-lg px-3'>
-						<div className='space-y-4 '>
+					<div className='space-y-4 mt-2 text-lg px-3 md:space-y-12'>
+						<div className='space-y-4'>
 							<input
 								type='text'
 								placeholder='Enter Candidate Name'
 								value={name}
 								onChange={handleAddCandidate}
-								className='border-b-2 w-full text-center font-medium mb-2'
+								className='border-b-2 w-full text-center font-bold mb-2 md:max-w-xl md:mx-auto md:block md:my-4 md:mb-8'
 							/>
 							<div className='flex gap-4 justify-center'>
 								<div className='flex gap-2 justify-end'>
@@ -56,27 +56,41 @@ const AdminPage = (props) => {
 								</button>
 							</div>
 						</div>
-						<table
-							id='myTable'
-							className='text-lg w-full'
-						>
-							<thead>
-								<tr className='flex justify-between w-full'>
-									<th className='border-b-2'>Index</th>
-									<th className='border-b-2'>Candidate name</th>
-									<th className='border-b-2'>Candidate votes</th>
-								</tr>
-							</thead>
-							<tbody>
-								{props.candidates?.map((candidate, index) => (
-									<tr key={index}>
-										<td>{candidate.index}</td>
-										<td>{candidate.name}</td>
-										<td>{candidate.voteCount}</td>
+						<div className='max-w-5xl mx-auto md:mt-16'>
+							<table
+								id='myTable'
+								className='text-lg w-full'
+							>
+								<thead>
+									<tr className='flex justify-between w-full text-center'>
+										<th className='border-b-2 md:text-2xl'>Index</th>
+										<th className='border-b-2 md:text-2xl'>Candidate name</th>
+										<th className='border-b-2 md:text-2xl'>Candidate votes</th>
 									</tr>
-								))}
-							</tbody>
-						</table>
+								</thead>
+								<tbody className='flex justify-between w-full'>
+									{props.candidates?.map((candidate, index) => (
+										<tr
+											key={index}
+											className='flex justify-between w-full mt-2'
+										>
+											<td className='md:text-xl font-bold'>
+												{candidate.index}
+											</td>
+											<td className='md:text-xl font-bold'>{candidate.name}</td>
+											<td className='md:text-xl font-bold'>
+												{candidate.voteCount}
+											</td>
+										</tr>
+									))}
+									{/* <tr className='flex justify-between w-full mt-2'>
+											<td className='md:text-xl font-bold'>01</td>
+											<td className='md:text-xl font-bold'>Danish Asad</td>
+											<td className='md:text-xl font-bold'>69420</td>
+										</tr> */}
+								</tbody>
+							</table>
+						</div>
 					</div>
 				) : (
 					<h1 className='text-3xl font-semibold text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
