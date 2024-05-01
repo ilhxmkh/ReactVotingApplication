@@ -28,7 +28,6 @@ const CreateElection = (props) => {
 
 	return (
 		<div>
-			<HeaderLogo />
 			<Header />
 			<div className=' md:max-w-6xl md:mx-auto'>
 				<Login

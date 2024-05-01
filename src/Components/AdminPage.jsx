@@ -24,7 +24,6 @@ const AdminPage = (props) => {
 	return (
 		<div className='px-2 h-svh'>
 			<div className='flex justify-between items-center pr-4 md:max-w-6xl md:mx-auto'>
-				<HeaderLogo />
 				{props.isOwner ? (
 					<button className='px-3 py-1 border-slate-50 border-2 rounded-md text-slate-50 button-shadow font-semibold '>
 						<Link to='/createElection'>Create</Link>
