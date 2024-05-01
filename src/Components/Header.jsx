@@ -55,7 +55,10 @@ function Header() {
 								className='inline-bock font-semibold text-2xl py-3 px-2.5 cursor-pointer basis-1/4 text-center bg-inherit'
 							>
 								<button
-									onClick={() => navigate(item.slug)}
+									onClick={() => {
+										navigate(item.slug);
+										setOpenMenu(false);
+									}}
 									className='md:text-[1.42rem]  md:hover:underline underline-offset-8'
 								>
 									{item.name}
