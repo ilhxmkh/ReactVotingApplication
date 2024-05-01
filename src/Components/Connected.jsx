@@ -10,7 +10,7 @@ const Connected = (props) => {
 	//     }
 	return (
 		<div
-			className={`px-4 h-svh overflow-clip + ${
+			className={`px-4 h-svh overflow-clip ${
 				!props.isConnected ? 'py-8' : ''
 			}`}
 		>
