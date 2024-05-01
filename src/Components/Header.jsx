@@ -65,13 +65,13 @@ function Header() {
 					</ul>
 				</nav>
 				<button
-					className='p-2'
+					className='p-2 pr-2.5'
 					onClick={toggleMenu}
 				>
 					<img
 						src={hamburgerIcon}
 						alt='menu icon'
-						className='md:hidden w-8'
+						className='md:hidden w-9'
 					/>
 				</button>
 			</header>
