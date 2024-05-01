@@ -9,7 +9,11 @@ const Connected = (props) => {
 	//     setTokenStatus(props.tokenStatus)
 	//     }
 	return (
-		<div className='pt-8 px-4 h-svh overflow-clip'>
+		<div
+			className={`px-4 h-svh overflow-clip ${
+				!props.isConnected ? 'py-8' : ''
+			}`}
+		>
 			{props.isConnected && <Header />}
 			<Login
 				connectWallet={props.connectWallet}

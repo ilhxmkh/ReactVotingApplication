@@ -9,7 +9,6 @@ const Result = (props) => {
 	}
 	return (
 		<div className='px-2'>
-			<HeaderLogo />
 			<Header />
 			<div className='text-lg text-center space-y-6'>
 				<button
